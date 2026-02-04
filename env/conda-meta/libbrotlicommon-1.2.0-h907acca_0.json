@@ -1,0 +1,101 @@
+{
+  "name": "libbrotlicommon",
+  "version": "1.2.0",
+  "build": "h907acca_0",
+  "build_number": 0,
+  "channel": "https://repo.anaconda.com/pkgs/main/win-64",
+  "subdir": "win-64",
+  "fn": "libbrotlicommon-1.2.0-h907acca_0.conda",
+  "md5": "d9c1dc58106b14e5173de685e8593dde",
+  "url": "https://repo.anaconda.com/pkgs/main/win-64/libbrotlicommon-1.2.0-h907acca_0.conda",
+  "sha256": "515b14efb88b6a184c3a228df9d735a60505a77d6d0d85ca2efe3fdf26135f7c",
+  "depends": [
+    "ucrt >=10.0.20348.0",
+    "vc >=14.2,<15",
+    "vc14_runtime >=14.29.30133"
+  ],
+  "constrains": [],
+  "license": "MIT",
+  "timestamp": 1762363782000,
+  "size": 87952,
+  "requested_spec": "None",
+  "package_tarball_full_path": "C:\\Users\\Lordp\\miniconda3\\pkgs\\libbrotlicommon-1.2.0-h907acca_0.conda",
+  "extracted_package_dir": "C:\\Users\\Lordp\\miniconda3\\pkgs\\libbrotlicommon-1.2.0-h907acca_0",
+  "files": [
+    "Library/bin/brotlicommon.dll",
+    "Library/lib/brotlicommon.lib",
+    "Library/lib/pkgconfig/libbrotlicommon.pc",
+    "Library/share/man/man1/brotli.1",
+    "Library/share/man/man3/constants.h.3",
+    "Library/share/man/man3/decode.h.3",
+    "Library/share/man/man3/encode.h.3",
+    "Library/share/man/man3/types.h.3"
+  ],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": [
+      {
+        "_path": "Library/bin/brotlicommon.dll",
+        "path_type": "hardlink",
+        "sha256": "be9a88ca43feec8dea5b54b7eb0245b4a8c965c4cd5b7d6bc7f8c4ed31281ca7",
+        "size_in_bytes": 149320,
+        "sha256_in_prefix": "be9a88ca43feec8dea5b54b7eb0245b4a8c965c4cd5b7d6bc7f8c4ed31281ca7"
+      },
+      {
+        "_path": "Library/lib/brotlicommon.lib",
+        "path_type": "hardlink",
+        "sha256": "758b5721d45a807dc0cd44b4a91089da2cec30b14f0407b0ec602503bc049b0a",
+        "size_in_bytes": 4410,
+        "sha256_in_prefix": "758b5721d45a807dc0cd44b4a91089da2cec30b14f0407b0ec602503bc049b0a"
+      },
+      {
+        "_path": "Library/lib/pkgconfig/libbrotlicommon.pc",
+        "prefix_placeholder": "C:/miniconda3/conda-bld/brotli-split_1762363672018/_h_env",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "sha256": "196e98937d559fad5dc93f510532914062b4f6e9155f4adb13757d44a48fc21c",
+        "size_in_bytes": 392,
+        "sha256_in_prefix": "ddfcd04ea15f3562f18485bf8d9f3ca91be2ca0ceefa5bad48b738d16279afed"
+      },
+      {
+        "_path": "Library/share/man/man1/brotli.1",
+        "path_type": "hardlink",
+        "sha256": "5592e0207f942e1b7be075bacd948ad20b76792845626a21592f5b9742c7af93",
+        "size_in_bytes": 5130,
+        "sha256_in_prefix": "5592e0207f942e1b7be075bacd948ad20b76792845626a21592f5b9742c7af93"
+      },
+      {
+        "_path": "Library/share/man/man3/constants.h.3",
+        "path_type": "hardlink",
+        "sha256": "2ac99f4d97a57a170877fed3ff93251612850f43598ba4eaf234e246787c978d",
+        "size_in_bytes": 1767,
+        "sha256_in_prefix": "2ac99f4d97a57a170877fed3ff93251612850f43598ba4eaf234e246787c978d"
+      },
+      {
+        "_path": "Library/share/man/man3/decode.h.3",
+        "path_type": "hardlink",
+        "sha256": "be0a93be98e80f00d075bf43dc6a0bb84cb4028ce0082211e958d1ef18112d8f",
+        "size_in_bytes": 17452,
+        "sha256_in_prefix": "be0a93be98e80f00d075bf43dc6a0bb84cb4028ce0082211e958d1ef18112d8f"
+      },
+      {
+        "_path": "Library/share/man/man3/encode.h.3",
+        "path_type": "hardlink",
+        "sha256": "893ebea4d0d29ff3f2b83004c6bcb4d3610ced41f7cb04f72c1710ff339f5a90",
+        "size_in_bytes": 24310,
+        "sha256_in_prefix": "893ebea4d0d29ff3f2b83004c6bcb4d3610ced41f7cb04f72c1710ff339f5a90"
+      },
+      {
+        "_path": "Library/share/man/man3/types.h.3",
+        "path_type": "hardlink",
+        "sha256": "c9afc281d042e84df6ba5ef4ac4a39f7e1ad8cae4d98adc702055b99c38b2267",
+        "size_in_bytes": 3081,
+        "sha256_in_prefix": "c9afc281d042e84df6ba5ef4ac4a39f7e1ad8cae4d98adc702055b99c38b2267"
+      }
+    ]
+  },
+  "link": {
+    "source": "C:\\Users\\Lordp\\miniconda3\\pkgs\\libbrotlicommon-1.2.0-h907acca_0",
+    "type": 1
+  }
+}

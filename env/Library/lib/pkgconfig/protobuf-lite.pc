@@ -1,0 +1,12 @@
+prefix=C:/Users/Lordp/Desktop/PyAuto/env/Library
+exec_prefix=C:/Users/Lordp/Desktop/PyAuto/env/Library
+libdir=C:/Users/Lordp/Desktop/PyAuto/env/Library/lib
+includedir=C:/Users/Lordp/Desktop/PyAuto/env/Library/include
+
+Name: Protocol Buffers
+Description: Google's Data Interchange Format
+Version: 33.0.0
+Requires: abseil_dll utf8_range
+Libs: -L${libdir} -lprotobuf-lite 
+Cflags: -I${includedir} -DPROTOBUF_USE_DLLS
+Conflicts: protobuf

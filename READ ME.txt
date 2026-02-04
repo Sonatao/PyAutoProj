@@ -1,0 +1,10 @@
+Use Instructions: 
+
+Click on the startApp file.
+
+A window will appear, asking how you would like to host it.
+
+Hold ctr, and left click the local URL option.
+
+Do not close the prompt window until finished using the app or else the browser will close.
+

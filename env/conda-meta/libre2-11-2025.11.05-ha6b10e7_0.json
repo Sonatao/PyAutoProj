@@ -1,0 +1,47 @@
+{
+  "name": "libre2-11",
+  "version": "2025.11.05",
+  "build": "ha6b10e7_0",
+  "build_number": 0,
+  "channel": "https://repo.anaconda.com/pkgs/main/win-64",
+  "subdir": "win-64",
+  "fn": "libre2-11-2025.11.05-ha6b10e7_0.conda",
+  "md5": "54aa35b13f4880ad6474a2644814535b",
+  "url": "https://repo.anaconda.com/pkgs/main/win-64/libre2-11-2025.11.05-ha6b10e7_0.conda",
+  "sha256": "d79d2bff90d41308388ac9c966838b93df4e555fdb6346f9f3e0210d21840af8",
+  "depends": [
+    "libabseil * cxx17*",
+    "libabseil >=20250814.1,<20250815.0a0",
+    "ucrt >=10.0.20348.0",
+    "vc >=14.3,<15",
+    "vc14_runtime >=14.44.35208"
+  ],
+  "constrains": [
+    "re2 2025-11-05 *_0"
+  ],
+  "license": "BSD-3-Clause",
+  "timestamp": 1763136507000,
+  "size": 267916,
+  "requested_spec": "None",
+  "package_tarball_full_path": "C:\\Users\\Lordp\\miniconda3\\pkgs\\libre2-11-2025.11.05-ha6b10e7_0.conda",
+  "extracted_package_dir": "C:\\Users\\Lordp\\miniconda3\\pkgs\\libre2-11-2025.11.05-ha6b10e7_0",
+  "files": [
+    "Library/bin/re2.dll"
+  ],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": [
+      {
+        "_path": "Library/bin/re2.dll",
+        "path_type": "hardlink",
+        "sha256": "506be2ed0c48d4a48b66bb5ca77c53b9dd9ac3352ae05ca89695c31d660ac07c",
+        "size_in_bytes": 1209672,
+        "sha256_in_prefix": "506be2ed0c48d4a48b66bb5ca77c53b9dd9ac3352ae05ca89695c31d660ac07c"
+      }
+    ]
+  },
+  "link": {
+    "source": "C:\\Users\\Lordp\\miniconda3\\pkgs\\libre2-11-2025.11.05-ha6b10e7_0",
+    "type": 1
+  }
+}

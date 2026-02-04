@@ -1,0 +1,12 @@
+prefix=C:/Users/Lordp/Desktop/PyAuto/env/Library
+exec_prefix=${prefix}
+libdir=C:/Users/Lordp/Desktop/PyAuto/env/Library/lib
+includedir=C:/Users/Lordp/Desktop/PyAuto/env/Library/include
+
+Name: absl_bad_any_cast
+Description: Abseil bad_any_cast library
+URL: https://abseil.io/
+Version: 20250814
+Requires:
+Libs: -L${libdir}  
+Cflags: -I${includedir}
