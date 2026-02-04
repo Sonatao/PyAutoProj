@@ -2,4 +2,4 @@
 headless = true
 
 [browser]
-gatherUsageStats = falsegi
+gatherUsageStats = false
