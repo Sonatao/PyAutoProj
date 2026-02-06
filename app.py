@@ -24,7 +24,8 @@ if uploaded:
         ascending = order == "Ascending"
 
         sorted_df = df.sort_values(by=sort_col, ascending=ascending)
-        duplicates_df = df[df.duplicated(subset=[dup_col], keep=False)]
+        
+        duplicates_df = df[df[dup_col].duplicated(keep=False)]
 
         st.success("Processing complete")
 
