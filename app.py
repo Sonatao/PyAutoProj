@@ -10,7 +10,8 @@ st.write("Upload an Excel file to begin.")
 uploaded = st.file_uploader("Upload Excel File", type=["xlsx", "xls"])
 
 if uploaded:
-    df = pd.read_excel(uploaded)
+    # Force ALL columns and rows to be read as full strings
+    df = pd.read_excel(uploaded, dtype=str)
     st.success("File loaded successfully")
 
     st.subheader("Sorting Options")
@@ -23,9 +24,14 @@ if uploaded:
     if st.button("Run Processing"):
         ascending = order == "Ascending"
 
+        # Sorting as full strings
         sorted_df = df.sort_values(by=sort_col, ascending=ascending)
-        
-        duplicates_df = df[df[dup_col].duplicated(keep=False)]
+
+        # Duplicate-only extraction + grouping duplicates together
+        duplicates_df = (
+            df[df[dup_col].duplicated(keep=False)]
+            .sort_values(by=dup_col, ascending=ascending)
+        )
 
         st.success("Processing complete")
 
