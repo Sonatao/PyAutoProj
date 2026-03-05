@@ -8,3 +8,8 @@ Hold ctr, and left click the local URL option.
 
 Do not close the prompt window until finished using the app or else the browser will close.
 
+
+OR
+
+Put this link into the browser:
+https://pyauto.streamlit.app/
