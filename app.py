@@ -15,8 +15,12 @@ if uploaded:
     st.success("File loaded successfully")
 
     st.subheader("Sorting Options")
-    sort_col = st.selectbox("Sort Column", df.columns)
+    sort_col = st.selectbox("Primary Sort Column", df.columns)
     order = st.selectbox("Sort Order", ["Ascending", "Descending"])
+
+    st.subheader("Secondary Sort Options")
+    enable_secondary = st.checkbox("Enable Secondary Sorting", value=True)
+    secondary_col = st.selectbox("Secondary Sort Column", df.columns)
 
     st.subheader("Duplicate Detection")
     dup_col = st.selectbox("Duplicate Check Column", df.columns)
@@ -25,35 +29,50 @@ if uploaded:
         ascending = order == "Ascending"
 
         # ---------------------------------------------------------
-        # SECONDARY SORT LOGIC:
-        # Create helper column: 0 if Constituency Code starts with a number, else 1
-        # This ensures numeric-prefixed codes always rise to the top *within each group*
+        # SECONDARY SORT LOGIC (only if enabled)
         # ---------------------------------------------------------
-        df["_cc_priority"] = df["Constituency Code"].str.match(r"^\d").apply(lambda x: 0 if x else 1)
+        if enable_secondary:
+
+            # Special logic for Constituency Code (numeric-first)
+            if secondary_col == "Constituency Code":
+                df["_secondary_priority"] = df["Constituency Code"].str.match(r"^\d").apply(
+                    lambda x: 0 if x else 1
+                )
+                secondary_sort_cols = ["_secondary_priority", "Constituency Code"]
+                secondary_sort_order = [True, True]
+
+            else:
+                # Generic secondary sort for any other column
+                df["_secondary_priority"] = 0  # no special priority
+                secondary_sort_cols = [secondary_col]
+                secondary_sort_order = [True]
+
+        else:
+            # No secondary sorting
+            df["_secondary_priority"] = 0
+            secondary_sort_cols = []
+            secondary_sort_order = []
 
         # ---------------------------------------------------------
-        # MAIN SORT:
-        # 1. Primary sort column (user choice)
-        # 2. Secondary: numeric-prefixed Constituency Codes first
-        # 3. Tertiary: alphabetical Constituency Code
+        # MAIN SORT: primary + optional secondary
         # ---------------------------------------------------------
+        sort_columns = [sort_col] + secondary_sort_cols
+        sort_orders = [ascending] + secondary_sort_order
+
         sorted_df = df.sort_values(
-            by=[sort_col, "_cc_priority", "Constituency Code"],
-            ascending=[ascending, True, True]
-        ).drop(columns=["_cc_priority"])
+            by=sort_columns,
+            ascending=sort_orders
+        ).drop(columns=["_secondary_priority"])
 
         # ---------------------------------------------------------
-        # DUPLICATES SORT:
-        # Apply the same group-aware numeric-first logic
+        # DUPLICATES SORT: same logic
         # ---------------------------------------------------------
-        duplicates_df = (
-            df[df[dup_col].duplicated(keep=False)]
-            .sort_values(
-                by=[dup_col, "_cc_priority", "Constituency Code"],
-                ascending=[ascending, True, True]
-            )
-            .drop(columns=["_cc_priority"])
-        )
+        dup_df = df[df[dup_col].duplicated(keep=False)]
+
+        dup_sorted = dup_df.sort_values(
+            by=[dup_col] + secondary_sort_cols,
+            ascending=[ascending] + secondary_sort_order
+        ).drop(columns=["_secondary_priority"])
 
         st.success("Processing complete")
 
@@ -72,7 +91,7 @@ if uploaded:
 
         st.download_button(
             "Download Duplicates File",
-            data=to_excel_bytes(duplicates_df),
+            data=to_excel_bytes(dup_sorted),
             file_name="duplicates_output.xlsx",
             mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
         )
